@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
   folderImage() {
     var url = localStorage.getItem('folderImageUrl');
     this.innerheigth = window.innerHeight;
-    this.innerWidth = window.innerWidth;
+    // this.innerWidth = window.innerWidth;
     if (this.innerheigth <= 1440 && this.innerheigth >= 1080) {
       this.imgPath = url + 'folderImage' + '/phone-l' + '/88.png';
     } else if (this.innerheigth <= 1080 && this.innerheigth >= 768) {
