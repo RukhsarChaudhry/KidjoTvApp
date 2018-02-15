@@ -1,0 +1,11 @@
+{
+    "/api": {
+        "target": "https://staging.kidjo.net/app/api/3",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/api": ""
+        }
+    }
+}

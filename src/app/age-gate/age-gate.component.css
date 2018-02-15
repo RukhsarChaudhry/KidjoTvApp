@@ -1,0 +1,184 @@
+.age-section{
+    background: radial-gradient(circle,indianred,darkslateblue);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: rgba(0,0,0,.5);
+    background-blend-mode: overlay;
+    overflow: hidden;
+}
+.main-container{
+    display: flex;
+    background: #fffe;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 3em 2em;
+    border-radius: 10px;
+    width: 60%;
+    height: 50%;
+    overflow: hidden;
+    flex-direction: column;
+    overflow: hidden;
+}
+.hello-div{
+    width: 350px;
+}
+.hello-div h2{
+    display: block;
+    font-size:30px;
+    font-family: Bree;
+    font-weight: 700;
+    word-spacing: 5px;
+    float: left;
+    width: 100%;
+    padding-top: 0;
+    color: #222;
+    overflow: hidden;
+}
+.hello-div p{
+    line-height: 1.5em;
+    font-size: 25px;
+    font-family: bree;
+    word-spacing: 5px;
+    color: #222;
+}
+#age-input-box{
+    margin: 1.8em 4em;
+    float: left;
+    border: 5px solid #999a;
+    border-radius: 10px;
+    font-size: 1.3em;
+    padding: 1em 0;
+    text-align: center;
+    width: auto;
+    
+}
+#age-input-box:focus{
+    outline: none;
+    border: 5px solid #666;
+}
+input::-webkit-input-placeholder {
+    font-size: 35px;
+    text-align: center;
+    color: #999;
+}
+.information-div{
+    max-width: 400px;
+    font-size:23px;
+    font-family: bree;
+    position: absolute;
+    top: 70%;
+    color: #777;
+}
+.number-div{
+    display:inline-flex;
+    width: 300px;
+    flex-direction: column;
+    flex-flow: wrap;
+    position: absolute;
+    top:45px;
+    right: 2em;
+    font-family: bree;
+}
+.number-div .btn{
+    margin: 15px;
+    margin-left: 10px; 
+    margin-top: auto;
+    background: src("assets/tablet-l/age_gate_key_a.png");
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border:none; 
+}
+.number-div :nth-child(10){
+    margin-left: 27%;
+}
+.number-div .btn{
+    display: block;
+    color: #000;
+    font-size: 25px;
+    padding: .9em;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.number-div .btn:focus{
+    outline: none;
+    background: src("assets/tablet-l/age_gate_key_focus_a.png")center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.number-div div:nth-child(11){
+    background:none;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+}
+.remove-icon a{
+    width: 50px;
+    padding: 1em 1.3em;
+}
+.remove-icon svg{
+    display: block;
+    width: 50px;
+    margin-left: 15px;
+}
+@media(max-width: 1160px)
+{   .age-section{
+    height: 1100px;
+    width: auto;
+}
+    .main-container{
+        display: flex;
+        height: 70%;
+        top: 4%;
+        bottom: 4%;
+        align-items:  center;
+    }
+    .hello-div{
+        margin: 0 auto;
+    }
+    .age-box-div{
+        margin: 0;
+        float: left;
+        margin: 0 auto;
+    }
+    .information-div{
+        top: 38%;
+    }
+    .number-div{
+        top:50%; 
+        left: 2em;
+        margin: 0 auto;
+    }
+}
+@media(max-width: 550px)
+{    
+    .main-container{
+        width: 80%;
+    }
+    .hello-div{
+        width: auto;
+        overflow: hidden;
+    }
+    .age-box-div{
+        display: flex;
+        float: none;
+        margin: 0em;
+        padding: 0;
+        display: flex;
+        justify-content:center;
+        width: 225px;
+    }
+    .number-div{
+        top:55%; 
+        overflow: hidden;
+    }
+}
+

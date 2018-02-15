@@ -1,0 +1,108 @@
+
+.playlist-setting{
+    /* background-image: url('../assets/tablet-l/background_day_top.png'); */
+    /* background-image: src("assets/tablet-l/background_day_top.png"); */
+    background-image: url('/assets/tablet-l/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0,0,0,.2);
+    background-blend-mode:overlay;
+}
+.playlist-icon-top{
+    position: absolute;
+    top: 0%;
+    right: 50%;
+    transform: translate(50%);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    height: 80px;
+}
+.playlist-icon-top h3{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 23px;
+    color: #444;
+    font-family: bree;
+}
+.playlist-icon-top img{
+    max-width: 200px;
+}
+.playlist-setting-footer{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 80px;
+}
+.playlist-setting-footer img{
+    max-width: 200px;
+}
+.playlist-setting-footer h3{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(42%);
+    font-size: 23px;
+    color: #444;
+    font-family: bree;
+}
+.main-card-container{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card-container img{
+    width: 240px;
+    padding-left: 20px;
+    position: relative;
+}
+.card-container .active img{
+    width: 320px;
+}
+.card-poster img{
+    position: absolute;
+    top: 70px;
+    left: 13%;
+    max-width: 200px;
+    background: red;
+}
+@media(max-width:768px)
+{
+    .playlist-setting{
+        height: 1000px;
+    }
+    .main-card-container{
+        top: 20%;
+    }
+}
+@media(max-width:1149px)
+{
+    .playlist-setting{
+        height: 1020px;
+    }
+    .main-card-container{
+        top: 20%;
+    }
+}
+
+@media(max-width:616px)
+{
+    .playlist-setting{
+        height: 1300px;
+    }
+    .main-card-container{
+        top: 10%;
+    }
+}

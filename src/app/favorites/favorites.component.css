@@ -1,0 +1,557 @@
+
+.playlist-section{
+    background: src("/assets/tablet-l/background_day_bottom.webp");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-color:lightsteelblue;
+    background-blend-mode: multiply;
+    overflow: hidden;
+    position: relative;
+}
+
+.footer-heading{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 80px;
+}
+.footer-heading img{
+    max-width: 200px;
+}
+.footer-heading h3{
+    position: absolute;
+    top: 50%;;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 25px;
+    font-family: bree;
+    color: #444;
+}
+.side-bar{
+    position: relative;
+    top: 10%;
+}
+.side-bar-contents img{
+    transform: translate(-12%);
+    width: 80px;
+    height: 500px;
+    border-radius: 15px;
+}
+.side-bar-contents p{
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    font-size: 25px;
+    width: 40px;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    font-family: bree;
+}
+.playlist{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    top: 5%;
+    color: #fff;
+    font-size: 25px;
+}
+.playlist img{
+    max-width: 100px;
+}
+.playlist h3{
+    margin-top: -10px;
+    font-family: bree;
+}
+.main-videocard-container{
+    display: flex;
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%);    
+}
+[class^="video-card-container"]
+{
+    margin-left: 2.5em;
+}
+.video-card-container{
+    position: relative;
+    max-width: 300px;
+    height: 264px;
+    padding: 0;
+    border-radius: 15px;
+    background: red;
+}
+.video-card{
+    position: relative;
+    max-width: 300px;
+    padding: 0;
+    margin: 0;
+}
+.video-card .caption{
+    padding: 1em;
+    background: red;
+    position: absolute;
+    bottom: -45px; 
+    left: 0;
+    right: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #fff;
+    font-family: bree;
+    font-weight: bold;
+    text-align: left;
+}
+.delete-btn{    
+    position: absolute;
+    top: 130%;
+    width: 100px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.delete-btn svg{
+    width: 15px;
+    height: 15px;
+    margin-right: auto;
+    margin-left: 7px;
+}
+.delete-btn p{
+    margin-right: auto;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-family: bree;
+    font-weight: bold;
+}
+#button{
+    display: flex;
+    width: 100px;
+    height: 32px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,.6));
+}
+#button:focus{
+    outline: none;
+}
+.video-card-container{
+    position: relative;
+    max-width: 300px;
+    height: 264px;
+    padding: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: red;
+}
+.video-card{
+    position: relative;
+    max-width: 300px;
+    padding: 0;
+    margin: 0;
+}
+.video-card .lock-overlay img{
+    position: absolute;
+    top: -2%;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.video-card .lock-overlay .lock-bar{
+    width: 100%;
+}
+.video-card .lock-overlay .lock-icon{
+    top: 3%;
+    left: 30%;
+}
+.video-card .lock-overlay p{
+    position: absolute;
+    top: 5%;
+    right: 27%;
+    color: #fff;
+    font-family: bree
+}
+
+.video-card .caption{
+    padding: 1em;
+    background: red;
+    position: absolute;
+    bottom: -45px; 
+    left: 0;
+    right: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #fff;
+    font-family: bree;
+    text-align: left;
+}
+.delete-btn{    
+    position: absolute;
+    top: 130%;
+    width: 100px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.delete-btn svg{
+    width: 15px;
+    height: 15px;
+    margin-right: auto;
+    margin-left: 7px;
+}
+.delete-btn p{
+    margin-right: auto;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-family: bree;
+}
+#button{
+    display: flex;
+    width: 100px;
+    height: 32px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,.6));
+}
+#button:focus{
+    outline: none;
+}
+.video-card-container{
+    position: relative;
+    max-width: 300px;
+    height: 264px;
+    padding: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: red;
+    
+}
+.video-card{
+    position: relative;
+    max-width: 300px;
+    padding: 0;
+    margin: 0;
+}
+.video-card .caption{
+    padding: 1em;
+    background: red;
+    position: absolute;
+    bottom: -45px; 
+    left: 0;
+    right: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #fff;
+    font-family: bree;
+    font-weight: bold;
+    text-align: left;
+}
+.delete-btn{    
+    position: absolute;
+    top: 130%;
+    width: 100px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.delete-btn svg{
+    width: 15px;
+    height: 15px;
+    margin-right: auto;
+    margin-left: 7px;
+}
+.delete-btn p{
+    margin-right: auto;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-family: bree;
+    font-weight: bold;
+}
+#button{
+    display: flex;
+    width: 100px;
+    height: 32px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,.6));
+}
+#button:focus{
+    outline: none;
+}
+@media(max-width:1024px)
+{    
+    .playlist-section{
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 1320px;  
+    }
+    .playlist{
+        top: 2.5%;
+    }
+    .main-video-card container{
+        left: 50%;
+        transform: translate(-50%);    
+        position: relative;
+        max-width: 300px;
+        height: 263px;
+        padding: 0;
+        border-radius: 15px;
+        background: red;
+}
+    .video-card{
+        top: 2%;
+    }
+    .main-videocard-container{
+        display:grid;
+        grid-gap: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 40%;
+        top: 16%;
+        width: 20%;
+    }
+    .video-card .lock-overlay img{
+        position: absolute;
+        top: -3%;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+}
+
+}
+@media(width:768px)
+{    
+    .playlist{
+        top: 2.5%;
+    }
+    .main-videocard-container{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        left: 36%;
+        top: 14%;
+        flex-wrap: wrap;
+        margin-bottom: 100px;
+    } 
+    .video-card-container{
+        margin-bottom:90px;
+     }
+    
+}
+@media(max-width:500px)
+{    
+    .main-videocard-container{
+     display: flex;
+     margin-left: auto;
+     margin-right: auto;
+     left: 14%;
+     top: 14%;
+     flex-wrap: wrap;
+     margin-bottom: 100px;
+    }
+    .video-card .lock-overlay .lock-bar{
+        position: absolute;
+        top: -3%;
+        width: 100.6%;
+        left: auto;
+    }
+
+    .video-card-container{
+        margin-bottom:90px;
+    }
+    .side-bar{
+    position: relative;
+    top: 10%;
+    }
+    .side-bar-contents img{
+    transform: translate(-12%);
+    width: 45px;
+    height: 500px;
+    border-radius: 15px;
+    }
+    .side-bar-contents p{
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    font-family: bree;
+    }
+}
+
+/*  =========================   Playlist Settings ===========================*/
+
+.playlist-setting{
+    background: src("assets/tablet-l/background_day_top.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0,0,0,.2);
+    background-blend-mode:overlay;
+}
+.playlist-icon-top{
+    position: absolute;
+    top: 0%;
+    right: 50%;
+    transform: translate(50%);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    height: 80px;
+}
+.playlist-icon-top h3{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 23px;
+    color: #444;
+    font-family: bree;
+}
+.playlist-icon-top img{
+    max-width: 200px;
+}
+.playlist-setting-footer{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 80px;
+}
+.playlist-setting-footer img{
+    max-width: 200px;
+}
+.playlist-setting-footer h3{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(42%);
+    font-size: 23px;
+    color: #444;
+    font-family: bree;
+}
+.main-card-container{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card-container img{
+    width: 240px;
+    padding-left: 20px;
+    position: relative;
+}
+.card-container .active img{
+    width: 320px;
+}
+.card-poster img{
+    position: absolute;
+    top: 70px;
+    left: 13%;
+    max-width: 200px;
+    background: red;
+}
+@media(max-width:768px)
+{
+    .playlist-setting{
+        height: 1000px;
+    }
+    .main-card-container{
+        top: 20%;
+    }
+}
+@media(max-width:1149px)
+{
+    .playlist-setting{
+        height: 1020px;
+    }
+    .main-card-container{
+        top: 20%;
+    }
+}
+
+@media(max-width:616px)
+{
+    .playlist-setting{
+        height: 1300px;
+    }
+    .main-card-container{
+        top: 10%;
+    }
+}
+
+.run-time-over-section{
+    width: auto;
+    min-height: 100vh;
+    background:#2e336c;
+    padding: 0 3em;
+    text-align: center;
+    background-size: cover;
+    position: relative;
+    box-sizing: border-box;
+}
+.sleeping-moon-image img{
+    max-width: 420px;
+    z-index: 10000;
+}
+.para-1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 50px;
+    font-weight: bold;
+    font-family: bree;
+    color: #fff;
+    width: 100%;
+    
+}
+.para-2{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 32px;
+    font-weight: bold;
+    font-family: bree;
+    color: aqua;
+    border: 6px solid aqua;
+    border-radius: 12px;
+    padding: .3em 1em;
+    width: 270px;
+}
+.sub-para{
+    font-style: normal;
+    font-size: 21px;
+    font-family: bree light;
+}
+@media(max-width:812px)
+{
+    .para-1{
+        top: 45%;
+        font-size: 32px
+    }
+    .para-2{
+        font-size: 28px;
+    }
+    .sleeping-moon-image img{
+        max-width:300px ;
+        width:100%;
+}
+}
