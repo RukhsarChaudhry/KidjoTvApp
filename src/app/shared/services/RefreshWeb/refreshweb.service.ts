@@ -27,11 +27,28 @@ export class RefreshWebService {
         let url = "/device/refreshWeb";
         return this.restConnector.httpPostWeb(refreshweb, url);
     }
-    public GetCard(values: any): Observable<Card[]> {
+    public GetCard(values: any): Observable<any> {
         this.contentType = 'education';
         let url = "/cards/getList";
         return this.restConnector.httpGetWeb(values, url + "?kidId=" + values.kidId + "contentType" + values.contentType + "premiumActive" + values.premiumActive, this.contentType);
 
+    }
+    public GetSubCard(idss: any): Observable<any> {
+        var deviceid = localStorage.getItem('X-Kidjo-DeviceId');
+        var id = idss
+        this.contentType = 'application/json';
+        let url = "/cards/folder/" + id;
+        return this.restConnector.httpGetWeb(deviceid, url, this.contentType);
+    }
+    public addFavrouit(id: any): Observable<any> {
+        var kidid = localStorage.getItem('kidId');
+        var dev = localStorage.getItem('deviceId');
+        var obj = new Object();
+        obj[kidid] = kidid;
+        obj[id] = id;
+        obj[dev] = dev
+        let url = "/kid/" + kidid + "/favorites/add";
+        return this.restConnector.httpPostWeb(obj, url);
     }
 }
 

@@ -2,47 +2,48 @@
   <!-- <p [routerLink]="['/age']">age</p>
   <p [routerLink]="['/overtime']">overtime</p>
   <p [routerLink]="['/video']">book</p> -->
-  <a [routerLink]="['/video']">
-    <div class="playlist-icon-top">
-      <img src="assets/svgs/navigation_favorites_top.svg">
-      <h3>Playlist</h3>
-    </div>
-  </a>
+  <div class="playlist-icon-top">
+    <img src="assets/svgs/navigation_favorites_top.svg">
+    <h3>Playlist</h3>
+  </div>
   <div class="main-card-container">
-    <div class="card-container">
-      <div class="card active">
-        <img style="background-color:red;" src={{imgPath}}/>
+    <div class="card-container" *ngFor="let folder of folders">
+      <div (click)="goToVideoPage(folder[0].id)" class="card-1">
+        <img [style.background]="folder[0].color" src={{folder[0].imgUrl}}/>
       </div>
 
-    </div>
-    <div class="card-container">
-      <div class="card card-1">
-        <img style="background-color:yellow;" src="assets/svgs/folder_card_yellow_open.svg">
-      </div>
-    </div>
-
-    <div class="card-container">
-      <div class="card card-2">
-        <img style="background-color:blue;" src="assets/svgs/folder_card_blue_open.svg">
-      </div>
-    </div>
-    <div class="card-container">
-      <div class="card card-3">
-        <img style="background-color:green;" src="assets/svgs/folder_card_purple_open.svg">
-      </div>
-    </div>
-    <div class="card-container">
-      <div class="card card-3">
-        <img style="background-color:orange;" src="assets/svgs/folder_card_purple_open.svg">
-      </div>
-    </div>
-    <div class="card-container">
-      <div class="card card-3">
-        <img style="background-color:purple;" src="assets/svgs/folder_card_purple_open.svg">
-      </div>
     </div>
   </div>
-  <a [routerLink]="['/settings']">
+
+  <!-- </div>
+  <div class="card-container">
+    <div class="card card-1">
+      <img style="background-color:yellow;" src="assets/svgs/folder_card_yellow_open.svg">
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card card-2">
+      <img style="background-color:blue;" src="assets/svgs/folder_card_blue_open.svg">
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card card-3">
+      <img style="background-color:green;" src="assets/svgs/folder_card_purple_open.svg">
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card card-3">
+      <img style="background-color:orange;" src="assets/svgs/folder_card_purple_open.svg">
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card card-3">
+      <img style="background-color:purple;" src="assets/svgs/folder_card_purple_open.svg">
+    </div>
+  </div> -->
+  <!-- </div> -->
+  <a [routerLink]="['/settings ']">
     <div class="playlist-setting-footer">
       <img src="assets/svgs/navigation_settings_bottom.svg">
       <h3>Settings</h3>

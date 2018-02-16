@@ -17,6 +17,7 @@ export class RESTConnectorService {
     Url = "https://staging.kidjo.net/app/api/3";
     date: string;
     d = new Date();
+    deviceId: string;
     constructor(
         private http: Http,
         private blockUiService: BlockUIService
@@ -80,8 +81,12 @@ export class RESTConnectorService {
 
     httpPostWeb(obj: any, url: string, contentType: string = "application/json"): Observable<any> {
         url = this.Url + url;
+        console.log(obj);
         this.blockUiService.startBlock();
-        let body = this.timeZoneOffsetInMinutes;
+        // let body = this.timeZoneOffsetInMinutes;
+        var body = new Object();
+        body['videoId'] = obj.id;
+        body['kidId'] = obj.kidid;
         const headers = this.getHeader(contentType, obj);
         let options = new RequestOptions({ headers: headers });
         return this.http.post(url, body, options)
@@ -92,6 +97,7 @@ export class RESTConnectorService {
     }
     httpGetWeb(obj: any, url: string, contentType: string) {
         url = this.Url + url;
+        console.log(url);
         const headers = this.getHeader(contentType, obj);
         let options = new RequestOptions({ headers: headers });
         return this.http.get(url, options).map((response: Response) =>

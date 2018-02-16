@@ -10,7 +10,7 @@
     <img src="assets/tablet-l/read-2799818_1920.jpg">
   </div>
   <div class="main-books-container">
-    <div class="books-container">
+    <div class="books-container" *ngFor="let vid of video">
       <div class="books-card">
         <iframe width="300" height="215" src="https://www.youtube.com/embed/qY4S5lJx_ss?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
           allowfullscreen></iframe>
@@ -20,54 +20,18 @@
           <p>Press to unlock</p>
         </div>
         <div class="caption">
-          <p>Catty Jane Builds A Boat</p>
+          <p>{{ vid[0].Title}}</p>
         </div>
-        <a [routerLink]="['/favorites']">
-          <div class="fav-btn">
-            <button type="button" value="btn" id="button-fav">
+        <div class="fav-btn" (click)="addToFav(vid[0].id)">
+          <button type="button" value="btn" id="button-fav">
                         <img src="assets/svgs/video_card_heart.svg">
                         <p>favourite</p>
                         </button>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="books-container">
-      <div class="books-card">
-        <iframe width="300" height="215" src="https://www.youtube.com/embed/nwZEcdBMLLU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
-          allowfullscreen></iframe>
-        <div class="lock-overlay">
-          <img class="lock-bar" src="assets/svgs/video_card_lock_bar.svg">
-          <img class="lock-icon" src="assets/svgs/video_card_lock.svg">
-          <p>Press to unlock</p>
-        </div>
-        <div class="caption">
-          <p>Beauty And The Beast</p>
-        </div>
-        <div class="fav-btn">
-          <button type="button" value="btn" id="button-fav"><img src="assets/svgs/video_card_heart.svg"><p>favourite</p>
-                        </button>
         </div>
       </div>
     </div>
-    <div class="books-container">
-      <div class="books-card">
-        <iframe width="300" height="215" src="https://www.youtube.com/embed/aa3OQiJPQCQ?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
-          allowfullscreen></iframe>
-        <div class="lock-overlay">
-          <img class="lock-bar" src="assets/svgs/video_card_lock_bar.svg">
-          <img class="lock-icon" src="assets/svgs/video_card_lock.svg">
-          <p>Press to unlock</p>
-        </div>
-        <div class="caption">
-          <p>Bert, Beth And The Turtle</p>
-        </div>
-        <div class="fav-btn">
-          <button type="button" value="btn" id="button-fav"><img src="assets/svgs/video_card_heart.svg"><p>favourite</p>
-                        </button>
-        </div>
-      </div>
-    </div>
+
+
   </div>
 
 </section>

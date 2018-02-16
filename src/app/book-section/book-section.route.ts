@@ -3,7 +3,7 @@ import { BookSectionComponent } from './book-section.component';
 
 export const BookSectionRoutes: Route[] = [
     {
-        path: 'video',
+        path: 'video/:id',
         component: BookSectionComponent,
     },
 ];
