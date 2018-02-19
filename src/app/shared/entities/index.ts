@@ -5,6 +5,7 @@ export * from './user';
 export * from './language';
 export * from './formate';
 export * from './folder';
+export * from './Addfav';
 //1
 export * from './RefreshWeb';
 export * from './video';

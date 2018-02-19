@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { RefreshWebService } from './../shared/services/RefreshWeb/index';
 import { Card } from './../shared/entities/index';
 
@@ -13,25 +14,21 @@ export class HomeComponent implements OnInit {
   kidId: string;
   activeSubscription: boolean;
   obj = new Object();
-  public innerWidth: any;
   public innerheigth: any;
   ImageUrl: string;
-  imgPath: string;
-  imgName: any[];
-  subCard: any;
   ids: any[] = [];
   cards: any[] = [];
   folders = new Object();
   bucketName: any;
   videoUrl: string;
-  constructor(public refreshweb: RefreshWebService, public router: Router) {
+  constructor(public refreshweb: RefreshWebService,
+    public router: Router,
+    private spinnerService: Ng4LoadingSpinnerService) {
     this.refreshWeb();
+  }
+  ngOnInit() {
     this.GetCard();
   }
-
-  ngOnInit() {
-  }
-
   refreshWeb() {
     this.deviceId = localStorage.getItem('X-Kidjo-DeviceId');
     if (!this.deviceId) {
@@ -54,30 +51,34 @@ export class HomeComponent implements OnInit {
     }
   }
   GetCard() {
-    console.log('cards');
     this.obj = localStorage.getItem('kidId');
     this.obj = localStorage.getItem('premiumActive');
-
+    this.spinnerService.show();
     this.refreshweb.GetCard(this.obj).subscribe(data => {
+      this.spinnerService.hide();
       this.cards = data.cards;
       console.log(this.cards);
       var tempData = [];
       var test = [];
       var color: any[] = ['red', 'yellow', 'blue', 'green', 'orange', 'purple'];
+      var counter = 0;
       for (var index = 0; index < this.cards.length; index++) {
-        if (this.cards[index].id) {
-          test = [{ 'id': this.cards[index].id, 'color': color[index], 'imgUrl': this.folderImage(this.cards[index].id) }]
-          tempData.push(test);
+        if (counter == 5) {
+          counter = 0;
         }
+
+        if (this.cards[index].id) {
+          test = [{ 'id': this.cards[index].id, 'color': color[counter], 'imgUrl': this.folderImage(this.cards[index].id) }]
+          tempData.push(test);
+          // increment counter
+          counter++;
+        }
+        //
       }
       this.folders = tempData;
-      console.log(this.folders);
-
     })
   }
-
   folderImage(id) {
-    //bucketName: string;
     var url = localStorage.getItem('folderImageUrl');
     this.innerheigth = window.innerHeight;
     if (this.innerheigth <= 1440 && this.innerheigth >= 1080) {
@@ -88,21 +89,14 @@ export class HomeComponent implements OnInit {
       this.bucketName = '/phone-s';
     } else if (this.innerheigth <= 2048 && this.innerheigth >= 1536) {
       this.bucketName = '/tablet-l';
-
     } else if (this.innerheigth <= 1536 && this.innerheigth >= 1440) {
       this.bucketName = '/tablet-m';
     } else if (this.innerheigth <= 768 && this.innerheigth >= 360) {
       this.bucketName = '/tablet-s';
     }
-
     return url + 'folderImage' + this.bucketName + '/' + id + '.png';
   }
-
-
-
   goToVideoPage(id: any) {
-    console.log(id);
     this.router.navigate(['./video', id]);
   }
-
 }

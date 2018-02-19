@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { WebStorageModule, LocalStorageService } from "angular-localstorage";
 import { DatePipe } from '@angular/common';
 import { AsyncLocalStorageModule } from 'angular-async-local-storage';
-
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 
 import { AppComponent } from './app.component';
@@ -17,7 +17,7 @@ import { VideoSelectionComponent } from './video-selection/video-selection.compo
 import { FavoritesComponent } from './favorites/favorites.component';
 import { AgeGateComponent } from './age-gate/age-gate.component';
 import { OvertimeErrorComponent } from './overtime-error/overtime-error.component';
-import { BookSectionComponent } from './book-section/book-section.component';
+import { FolderComponent } from './folder/folder.component';
 
 
 
@@ -30,14 +30,15 @@ import { BookSectionComponent } from './book-section/book-section.component';
     FavoritesComponent,
     AgeGateComponent,
     OvertimeErrorComponent,
-    BookSectionComponent
+    FolderComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     SharedModule.forRoot(),
     RouterModule.forRoot(routes),
-    AsyncLocalStorageModule
+    AsyncLocalStorageModule,
+    Ng4LoadingSpinnerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

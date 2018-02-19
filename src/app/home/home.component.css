@@ -1,7 +1,5 @@
 
 .playlist-setting{
-    /* background-image: url('../assets/tablet-l/background_day_top.png'); */
-    /* background-image: src("assets/tablet-l/background_day_top.png"); */
     background-image: url('/assets/tablet-l/background.jpg');
     background-size: cover;
     background-position: center;

@@ -1,60 +1,57 @@
 <section class="videos-filter-1">
-    <div class="video-filter-top">
-        <img src="assets/svgs/navigation_folder_top.svg">
-        <h3>Videos</h3>
-    </div>
+    <a [routerLink]="[ '/'] ">
+        <div class="video-filter-top">
+            <img src="assets/svgs/navigation_folder_top.svg">
+            <h3>Videos</h3>
+        </div>
+    </a>
     <div class="main-element-container">
         <div class="box-1">
             <img src="assets/svgs/settings_box_background.svg">
 
             <div class="text-box-1">
                 <h4>Filter by age</h4>
-                <ul>
-                    <li><a href="">3</a></li>
-                    <li class="active"><a href="">4<img src="assets/svgs/settings_check.svg"></a></li>
-                    <li><a href="">5</a></li>
-                    <li><a href="">6</a></li>
-                    <li><a href="">7</a></li>
+                <ul style="    cursor: pointer;">
+                    <li style="left:50%;" *ngFor="let m of age" (click)="getAge(m)">{{m}}
+                        <img src="assets/svgs/settings_check.svg" *ngIf="setAgeTick(m)" style="  display: inline-block !important;   float: right;">
+                    </li>
                 </ul>
             </div>
         </div>
         <div class="box-2">
             <img src="assets/svgs/settings_box_background.svg">
-
-            <div class="text-box-2">
+            <div class="text-box-1">
                 <h4>Set time limit</h4>
-                <ul>
-                    <li><a href="">5 Minutes</a></li>
-                    <li><a href="">20 Minutes</a></li>
-                    <li><a href="">40 Minutes</a></li>
-                    <li><a href="">60 Minutes</a></li>
-                    <li class="active"><a href="">90 Minutes <img src="assets/svgs/settings_check.svg"></a></li>
-                    <li><a href="">Off</a></li>
+                <ul style=" cursor: pointer; ">
+                    <li *ngFor="let time of timeLimit " (click)="getTime(time) ">{{time}} Minutes
+                        <img src="assets/svgs/settings_check.svg" *ngIf="setTimeTick(time) " style=" display: inline-block !important; ">
+                    </li>
+                    <li (click)="getTime(off) ">{{off}} <img src="assets/svgs/settings_check.svg " *ngIf="setTimeTick(off)" style=" display: inline-block !important; ">
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="box-3">
-            <img src="assets/svgs/settings_box_background.svg">
+        <div class="box-3 ">
+            <img src="assets/svgs/settings_box_background.svg ">
 
-            <div class="text-box-3">
+            <div class="text-box-1">
                 <h4>Choose content</h4>
-                <ul>
-                    <li class="active"><a href="">Mix<img src="assets/svgs/settings_check.svg"></a></li>
-                    <li><a href="">Entertainment</a></li>
-                    <li><a href="">Educational</a></li>
+                <ul style=" cursor: pointer; ">
+                    <li *ngFor="let c of content " (click)="getContent(c) ">{{c}}
+                        <img src="assets/svgs/settings_check.svg " *ngIf="setContentTick(c) " style=" display: inline-block !important; "></li>
+
                 </ul>
             </div>
         </div>
-        <div class="box-4">
-            <img src="assets/svgs/settings_box_background.svg">
+        <div class="box-4 ">
+            <img src="assets/svgs/settings_box_background.svg ">
 
-            <div class="text-box-4">
+            <div class="text-box-1">
                 <h4>Language</h4>
-                <ul>
-                    <li class="active"><a href="">English<img src="assets/svgs/settings_check.svg"></a></li>
-                    <li><a href="">Espanol</a></li>
-                    <li><a href="">Francis</a></li>
-                    <li><a href="">Portugues</a></li>
+                <ul style=" cursor: pointer; ">
+                    <li *ngFor="let lang of language " (click)="getLanguage(lang) ">{{lang}}
+                        <img src="assets/svgs/settings_check.svg " *ngIf="setLanguageTick(lang) " style=" display: inline-block !important; ">
+                    </li>
                 </ul>
             </div>
         </div>

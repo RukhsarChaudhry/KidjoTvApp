@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { BlockUIService } from './services/blockui/index';
 import { RESTConnectorService } from './services/RestService/index';
 import { RefreshWebService } from './services/RefreshWeb/index';
+import { VideoService } from './services/videoService/index';
+import { FavoriteService } from './services/favoritesService/index';
 
 @NgModule({
     imports: [
@@ -18,8 +20,9 @@ export class SharedModule {
             providers: [
                 BlockUIService,
                 RESTConnectorService,
-                RefreshWebService
-
+                RefreshWebService,
+                VideoService,
+                FavoriteService
             ]
         };
     }

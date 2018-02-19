@@ -1,33 +1,20 @@
-
-.playlist-section{
-    background-image: url("/assets/tablet-l/background_day_bottom.webp");
-    background-size: cover;
-    background-position: center;
+.books-section{
     height: 100vh;
     background-color:lightsteelblue;
     background-blend-mode: multiply;
-    overflow: hidden;
     position: relative;
 }
-
-.footer-heading{
+.background{
     position: absolute;
-    bottom: 0%;
-    left: 50%;
-    transform: translate(-50%);
-    height: 80px;
-}
-.footer-heading img{
-    max-width: 200px;
-}
-.footer-heading h3{
-    position: absolute;
-    top: 50%;;
-    left: 50%;
-    transform: translate(-50%);
-    font-size: 25px;
-    font-family: bree;
-    color: #444;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('/assets/tablet-l/background_day_bottom.png');
+    background-size: cover;
+    filter: blur(40px);
+    background-repeat: no-repeat;
+    background-position: right;
 }
 .side-bar{
     position: relative;
@@ -50,7 +37,15 @@
     font-weight: 500;
     font-family: bree;
 }
-.playlist{
+
+.main-books-container{
+    display: flex;
+    position: absolute;
+    top: 31%;
+    left: 0%;
+    transform: translate(-20%);    
+}
+.books{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
@@ -59,25 +54,23 @@
     color: #fff;
     font-size: 25px;
 }
-.playlist img{
-    max-width: 100px;
+.books img{
+    max-width: 120px;
+    border: 4px solid red;
+    border-radius: 4px
 }
-.playlist h3{
-    margin-top: -10px;
-    font-family: bree;
-}
-.main-videocard-container{
+.books-container{
     display: flex;
     position: absolute;
     top: 31%;
     left: 50%;
     transform: translate(-50%);    
 }
-[class^="video-card-container"]
+[class^="books-container"]
 {
     margin-left: 2.5em;
 }
-.video-card-container{
+.books-container{
     position: relative;
     max-width: 300px;
     height: 264px;
@@ -85,103 +78,40 @@
     border-radius: 15px;
     background: red;
 }
-.video-card{
+.books-card{
     position: relative;
     max-width: 300px;
     padding: 0;
     margin: 0;
 }
-.video-card .caption{
-    padding: 1em;
-    background: red;
+.lock-overlay img{
     position: absolute;
-    bottom: -45px; 
+    top: 0;
     left: 0;
     right: 0;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    color: #fff;
-    font-family: bree;
-    font-weight: bold;
-    text-align: left;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
-.delete-btn{    
-    position: absolute;
-    top: 130%;
-    width: 100px;
-    left: 50%;
-    transform: translate(-50%);
-}
-.delete-btn svg{
-    width: 15px;
-    height: 15px;
-    margin-right: auto;
-    margin-left: 7px;
-}
-.delete-btn p{
-    margin-right: auto;
-    margin-left: 10px;
-    text-transform: uppercase;
-    font-family: bree;
-    font-weight: bold;
-}
-#button{
-    display: flex;
-    width: 100px;
-    height: 32px;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,.6));
-}
-#button:focus{
-    outline: none;
-}
-.video-card-container{
-    position: relative;
-    max-width: 300px;
-    height: 264px;
-    padding: 0;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background: red;
-}
-.video-card{
-    position: relative;
-    max-width: 300px;
-    padding: 0;
-    margin: 0;
-}
-.video-card .lock-overlay img{
-    position: absolute;
-    top: -2%;
-    left: 0;
-    right: 0;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-.video-card .lock-overlay .lock-bar{
+.lock-overlay .lock-bar{
     width: 100%;
 }
-.video-card .lock-overlay .lock-icon{
+.lock-overlay .lock-icon{
     top: 3%;
     left: 30%;
 }
-.video-card .lock-overlay p{
+.lock-overlay p{
     position: absolute;
     top: 5%;
     right: 27%;
     color: #fff;
     font-family: bree
 }
-
-.video-card .caption{
-    padding: 1em;
+.books-card .caption{
+    padding: 0em;
     background: red;
     position: absolute;
-    bottom: -45px; 
-    left: 0;
+    top: 86%;
+    left: 6%;
     right: 0;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -189,28 +119,28 @@
     font-family: bree;
     text-align: left;
 }
-.delete-btn{    
+.fav-btn{    
     position: absolute;
-    top: 130%;
-    width: 100px;
+    top: 110%;
     left: 50%;
     transform: translate(-50%);
 }
-.delete-btn svg{
+.fav-btn img{
     width: 15px;
     height: 15px;
-    margin-right: auto;
     margin-left: 7px;
 }
-.delete-btn p{
+.fav-btn p{
     margin-right: auto;
-    margin-left: 10px;
+    margin-left:10px;
     text-transform: uppercase;
     font-family: bree;
+    font-weight: bold;
+    font-size: 12px;
 }
-#button{
+#button-fav{
     display: flex;
-    width: 100px;
+    width: 108px;
     height: 32px;
     border-radius: 10px;
     justify-content: center;
@@ -218,164 +148,41 @@
     background: #fff;
     filter: drop-shadow(0 2px 2px rgba(0,0,0,.6));
 }
-#button:focus{
+#button-fav:focus{
     outline: none;
 }
-.video-card-container{
-    position: relative;
-    max-width: 300px;
-    height: 264px;
-    padding: 0;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background: red;
-    
-}
-.video-card{
-    position: relative;
-    max-width: 300px;
-    padding: 0;
-    margin: 0;
-}
-.video-card .caption{
-    padding: 1em;
-    background: red;
-    position: absolute;
-    bottom: -45px; 
-    left: 0;
-    right: 0;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    color: #fff;
-    font-family: bree;
-    font-weight: bold;
-    text-align: left;
-}
-.delete-btn{    
-    position: absolute;
-    top: 130%;
-    width: 100px;
-    left: 50%;
-    transform: translate(-50%);
-}
-.delete-btn svg{
-    width: 15px;
-    height: 15px;
-    margin-right: auto;
-    margin-left: 7px;
-}
-.delete-btn p{
-    margin-right: auto;
-    margin-left: 10px;
-    text-transform: uppercase;
-    font-family: bree;
-    font-weight: bold;
-}
-#button{
-    display: flex;
-    width: 100px;
-    height: 32px;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,.6));
-}
-#button:focus{
-    outline: none;
-}
-@media(max-width:1024px)
+@media(max-width:1025px)
 {    
-    .playlist-section{
-        background-size: cover;
-        background-repeat: no-repeat;
+    .books-section{
+        background-size: contain;
         height: 1320px;  
     }
-    .playlist{
-        top: 2.5%;
-    }
-    .main-video-card container{
-        left: 50%;
-        transform: translate(-50%);    
-        position: relative;
-        max-width: 300px;
-        height: 263px;
-        padding: 0;
-        border-radius: 15px;
-        background: red;
-}
-    .video-card{
+    .books{
         top: 2%;
     }
-    .main-videocard-container{
+    .main-books-container{
         display:grid;
         grid-gap: 70px;
         margin-left: auto;
         margin-right: auto;
         left: 40%;
-        top: 16%;
+        top: 15%;
         width: 20%;
     }
-    .video-card .lock-overlay img{
-        position: absolute;
-        top: -3%;
-        left: 0;
-        right: 0;
-        box-sizing: border-box;
-}
-
-}
-@media(width:768px)
-{    
-    .playlist{
-        top: 2.5%;
-    }
-    .main-videocard-container{
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        left: 36%;
-        top: 14%;
-        flex-wrap: wrap;
-        margin-bottom: 100px;
-    } 
-    .video-card-container{
-        margin-bottom:90px;
-     }
-    
 }
 @media(max-width:500px)
-{    
-    .main-videocard-container{
-     display: flex;
-     margin-left: auto;
-     margin-right: auto;
-     left: 14%;
-     top: 14%;
-     flex-wrap: wrap;
-     margin-bottom: 100px;
-    }
-    .video-card .lock-overlay .lock-bar{
-        position: absolute;
-        top: -3%;
-        width: 100.6%;
-        left: auto;
-    }
-
-    .video-card-container{
-        margin-bottom:90px;
-    }
+{
     .side-bar{
     position: relative;
     top: 10%;
-    }
-    .side-bar-contents img{
+}
+.side-bar-contents img{
     transform: translate(-12%);
     width: 45px;
     height: 500px;
     border-radius: 15px;
-    }
-    .side-bar-contents p{
+}
+.side-bar-contents p{
     position: absolute;
     top: 50%;
     left: 1%;
@@ -385,5 +192,28 @@
     color: #fff;
     font-weight: 500;
     font-family: bree;
-    }
+}
+}
+
+.playlist-icon-top{
+    position: absolute;
+    top: 0%;
+    right: 50%;
+    transform: translate(50%);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    height: 80px;
+}
+.playlist-icon-top h3{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 23px;
+    color: #444;
+    font-family: bree;
+}
+.playlist-icon-top img{
+    max-width: 200px;
 }

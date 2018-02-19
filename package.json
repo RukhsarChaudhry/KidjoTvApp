@@ -25,7 +25,11 @@
     "angular-localstorage": "^1.1.5",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
+    "ng2-toastr": "^4.1.2",
+    "ng4-loading-spinner": "^1.1.1",
     "ngx-bootstrap": "^2.0.2",
+    "ngx-drag-scroll": "^1.7.3",
+    "primeng": "^5.2.0",
     "rxjs": "^5.5.6",
     "sha.js": "^2.4.10",
     "zone.js": "^0.8.19"

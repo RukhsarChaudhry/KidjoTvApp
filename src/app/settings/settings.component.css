@@ -37,9 +37,8 @@
     justify-content: center;
 }
 [class^="box"] img{
-    max-width: 290px;
-    margin-left: 15px;
-    margin-right: 15px;
+    max-width: 350px;
+
 }
 .box-1{
     position: relative;
@@ -54,21 +53,17 @@
 .text-box-1 ul{
     padding-top: 60px;
     list-style: none;
-    text-align: center;
-    font-size: 24px;
+    text-align: left;
+    font-size: 20px;
     line-height: 1.9em;
-}
-.text-box-1 a{
-    text-decoration: none;
-    color: #fff;
-    position: relative;
-    font-family: bree light;
+    padding-left: 0;
 }
 .text-box-1 .active img{
     position: absolute;
-    width: 30px;
+    max-width: 20px;
     top: 0;
-    margin-left: 50px;
+    right: 0;
+    
 }
 .text-box-1 h4{
     font-size: 24px;
@@ -88,16 +83,10 @@
 .text-box-2 ul{
     padding-top: 30px;
     list-style: none;
-    text-align: center;
+    text-align: left;
     font-size: 24px;
     line-height: 1.9em;
-}
-.text-box-2 a{
-    text-decoration: none;
-    color: #fff;
-    position: relative;
-    font-family: bree light;
-    font-weight: 200;
+    padding-left: 5%;
 }
 .text-box-2 h4{
     font-size: 24px;
@@ -126,16 +115,10 @@
 .text-box-3 ul{
     padding-top: 30px;
     list-style: none;
-    text-align: center;
+    text-align: left;
     font-size: 24px;
     line-height: 1.9em;
-}
-.text-box-3 a{
-    text-decoration: none;
-    color: #fff;
-    position: relative;
-    font-family: bree light;
-    font-weight: 200;
+    padding-left: 5%;
 }
 .text-box-3 .active img{
     position: absolute;
@@ -163,16 +146,10 @@
 .text-box-4 ul{
     padding-top: 30px;
     list-style: none;
-    text-align: center;
+    text-align: left;
     font-size: 24px;
     line-height: 1.9em;
-}
-.text-box-4 a{
-    text-decoration: none;
-    color: #fff;
-    position: relative;
-    font-family: bree light;
-    font-weight: 200;
+    padding-left: 5%;
 }
 .text-box-4 .active img{
     position: absolute;
@@ -190,7 +167,7 @@
 @media(max-width:1296px)
 {
     .videos-filter-1{
-        height: 1100px;
+        height: 1250px;
     }
 }
 @media(max-width:656px)

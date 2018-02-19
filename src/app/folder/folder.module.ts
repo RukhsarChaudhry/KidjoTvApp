@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BookSectionComponent } from './book-section.component';
+import { FolderComponent } from './folder.component';
 
 @NgModule({
     imports: [CommonModule],
-    declarations: [BookSectionComponent],
-    exports: [BookSectionComponent],
+    declarations: [FolderComponent],
+    exports: [FolderComponent],
     providers: []
 })
-export class BookSectionModule { }
+export class FolderModule { }

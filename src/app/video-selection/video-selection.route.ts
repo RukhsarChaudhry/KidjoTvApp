@@ -3,7 +3,7 @@ import { VideoSelectionComponent } from './video-selection.component';
 
 export const VideoSelectionRoutes: Route[] = [
     {
-        path: 'folder',
+        path: 'video/:id',
         component: VideoSelectionComponent,
     },
 ];

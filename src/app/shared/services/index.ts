@@ -5,4 +5,5 @@ export * from './BlockUi/index';
 export * from './RestService/index';
 //2
 export * from './RefreshWeb/index';
-
+export * from './videoService/index';
+export * from './favoritesService/index';
