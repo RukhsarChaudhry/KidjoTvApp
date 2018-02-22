@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Input } from '@angular/core';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { RefreshWebService } from './../shared/services/RefreshWeb/index';
 import { Card } from './../shared/entities/index';
+import { NgxCarousel, NgxCarouselStore } from 'ngx-carousel';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   deviceId: string;
@@ -21,13 +24,28 @@ export class HomeComponent implements OnInit {
   folders = new Object();
   bucketName: any;
   videoUrl: string;
+  public carouselOne: NgxCarousel;
   constructor(public refreshweb: RefreshWebService,
     public router: Router,
     private spinnerService: Ng4LoadingSpinnerService) {
     this.refreshWeb();
   }
+
   ngOnInit() {
     this.GetCard();
+
+    this.carouselOne = {
+      grid: { xs: 8, sm: 2, md: 4, lg: 8, all: 0 },
+      slide: 2,
+      speed: 400,
+      animation: 'lazy',
+      point: {
+        visible: true
+      },
+      load: 2,
+      touch: true,
+      easing: 'ease'
+    }
   }
   refreshWeb() {
     this.deviceId = localStorage.getItem('X-Kidjo-DeviceId');
@@ -66,17 +84,19 @@ export class HomeComponent implements OnInit {
         if (counter == 5) {
           counter = 0;
         }
-
         if (this.cards[index].id) {
           test = [{ 'id': this.cards[index].id, 'color': color[counter], 'imgUrl': this.folderImage(this.cards[index].id) }]
           tempData.push(test);
           // increment counter
           counter++;
         }
-        //
       }
       this.folders = tempData;
-    })
+
+    },
+      Error => {
+        this.spinnerService.hide();
+      });
   }
   folderImage(id) {
     var url = localStorage.getItem('folderImageUrl');
@@ -99,4 +119,5 @@ export class HomeComponent implements OnInit {
   goToVideoPage(id: any) {
     this.router.navigate(['./video', id]);
   }
+
 }

@@ -12,14 +12,84 @@
       <h3>Favourite</h3>
     </div>
   </a>
-  <!-- <div class="books">
-    <img src="assets/tablet-l/read-2799818_1920.jpg">
-  </div> -->
+
+
   <div class="main-books-container">
-    <div class="books-container" *ngFor="let vid of video">
+    <video id="video" width="640" src={{manifestUri}} controls autoplay></video>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 
+  <div class="main-books-container">
+    <ngx-carousel [inputs]="carouselOne"  style="position:relative !important">
+      <ngx-item NgxCarouselItem style="position:relative !important">
+        <video class="video" width="300" height="215">
+          <source src="https://www.youtube.com/embed/qY4S5lJx_ss?rel=0&amp;showinfo=0" />
+        </video> -->
+  <!-- <iframe width="300" height="215" src="https://www.youtube.com/embed/qY4S5lJx_ss?rel=0&amp;showinfo=0" frameborder="0" frameborder="0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+  <!-- <div class="lock-overlay">
+          <img class="lock-bar" src="assets/svgs/video_card_lock_bar.svg">
+          <img class="lock-icon" src="assets/svgs/video_card_lock.svg">
+          <p>Press to unlock</p>
+        </div>
+        <div class="caption">
+          <p>Catty Jane</p>
+        </div>
+        <div class="fav-btn" (click)="addToFav(vid[0].id)">
+          <button type="button" value="btn" id="button-fav">
+                <img src="assets/svgs/video_card_heart.svg">
+                <p>favourite</p>
+            </button>
+        </div>
+      </ngx-item>
+      <ngx-item NgxCarouselItem>
+        <video class="video" width="300" height="215">
+          <source src="https://www.youtube.com/embed/qY4S5lJx_ss?rel=0&amp;showinfo=0" />
+        </video> -->
+  <!-- <iframe width="300" height="215" src="https://www.youtube.com/embed/qY4S5lJx_ss?rel=0&amp;showinfo=0" frameborder="0" frameborder="0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+  <!-- <div class="lock-overlay">
+          <img class="lock-bar" src="assets/svgs/video_card_lock_bar.svg">
+          <img class="lock-icon" src="assets/svgs/video_card_lock.svg">
+          <p>Press to unlock</p>
+        </div>
+        <div class="caption">
+          <p>Catty Jane</p>
+        </div>
+        <div class="fav-btn" (click)="addToFav(vid[0].id)">
+          <button type="button" value="btn" id="button-fav">
+                  <img src="assets/svgs/video_card_heart.svg">
+                  <p>favourite</p>
+              </button>
+        </div>
+      </ngx-item>
+      <button NgxCarouselPrev class='leftRs'>&lt;</button>
+      <button NgxCarouselNext class='rightRs'>&gt;</button>
+    </ngx-carousel>
+  </div> -->
+
+
+
+
+
+
+  <!-- <div class="main-books-container">
+
+    <div class="books-container" >
       <div class="books-card">
-        <iframe width="300" height="215" src="https://www.youtube.com/embed/qY4S5lJx_ss?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
-          allowfullscreen></iframe>
+
+        <iframe width="300" height="215" src="https://d23sw6prl9jc74.cloudfront.net/1/7BVo6A4Xr1/7BVo6A4Xr1.m3u8" frameborder="0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <div class="lock-overlay">
           <img class="lock-bar" src="assets/svgs/video_card_lock_bar.svg">
           <img class="lock-icon" src="assets/svgs/video_card_lock.svg">
@@ -27,17 +97,14 @@
         </div>
         <div class="caption">
           <p>{{ vid[0].Title}}</p>
-        </div>
-        <div class="fav-btn" (click)="addToFav(vid[0].id)">
+        </div> -->
+  <!-- <div class="fav-btn" (click)="addToFav(vid[0].id)">
           <button type="button" value="btn" id="button-fav">
-                        <img src="assets/svgs/video_card_heart.svg">
-                        <p>favourite</p>
-                        </button>
+              <img src="assets/svgs/video_card_heart.svg">
+              <p>favourite</p>
+          </button>
         </div>
       </div>
     </div>
-
-
-  </div>
-
+  </div> -->
 </section>

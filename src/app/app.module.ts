@@ -6,6 +6,13 @@ import { WebStorageModule, LocalStorageService } from "angular-localstorage";
 import { DatePipe } from '@angular/common';
 import { AsyncLocalStorageModule } from 'angular-async-local-storage';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { DragScrollModule } from 'ngx-drag-scroll';
+import { SliderModule } from 'angular-image-slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxCarouselModule } from 'ngx-carousel';
+import 'hammerjs';
+
+
 
 
 import { AppComponent } from './app.component';
@@ -38,7 +45,11 @@ import { FolderComponent } from './folder/folder.component';
     SharedModule.forRoot(),
     RouterModule.forRoot(routes),
     AsyncLocalStorageModule,
-    Ng4LoadingSpinnerModule.forRoot()
+    Ng4LoadingSpinnerModule.forRoot(),
+    DragScrollModule,
+    BrowserAnimationsModule,
+    SliderModule,
+    NgxCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

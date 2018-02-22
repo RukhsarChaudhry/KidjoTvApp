@@ -3,16 +3,20 @@
     <img src="assets/svgs/navigation_favorites_top.svg">
     <h3>Playlist</h3>
   </div>
-  <!-- <ScrollView orientation="horizontal"> -->
-  <div class="main-card-container">
-    <div class="card-container" *ngFor="let folder of folders">
-      <div (click)="goToVideoPage(folder[0].id)" class="card-1">
-        <img style="overflow-x:scroll;" [style.background]="folder[0].color " src={{folder[0].imgUrl}}/>
-      </div>
 
-    </div>
+  <div class="main-card-container">
+    <ngx-carousel [inputs]="carouselOne">
+      <ngx-item NgxCarouselItem *ngFor="let folder of folders">
+        <div (click)="goToVideoPage(folder[0].id)">
+          <img class="activeImg" [style.background]="folder[0].color " src={{folder[0].imgUrl}}/>
+        </div>
+      </ngx-item>
+      <button NgxCarouselPrev class='leftRs'>&lt;</button>
+      <button NgxCarouselNext class='rightRs'>&gt;</button>
+    </ngx-carousel>
   </div>
-  <!-- </ScrollView> -->
+
+
   <a [routerLink]="[ '/settings'] ">
     <div class="playlist-setting-footer ">
       <img src="assets/svgs/navigation_settings_bottom.svg ">
