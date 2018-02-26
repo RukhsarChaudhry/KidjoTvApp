@@ -15,11 +15,24 @@
 
 
   <div class="main-books-container">
-    <video id="video" width="640" src={{manifestUri}} controls autoplay></video>
+    <ngx-carousel [inputs]="carouselTile">
+      <ngx-tile NgxCarouselItem *ngFor="let url of uri">
+        <video style="width: 100%;" id="video" width="640" src={{url}} controls></video>
+
+      </ngx-tile>
+
+      <button NgxCarouselPrev class='leftRs'>&lt;</button>
+      <button NgxCarouselNext class='rightRs'>&gt;</button>
+
+    </ngx-carousel>
   </div>
 
 
 
+  <!-- 
+  <div class="main-books-container">
+    <video style="width: 25%;" id="video" width="640" src={{manifestUri}} controls autoplay></video>
+  </div> -->
 
 
 

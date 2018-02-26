@@ -17,17 +17,9 @@ export class SettingsComponent implements OnInit {
   off: any;
   testt: any[] = [];
   constructor() {
-    this.getLocal();
     this.off = "Off";
-
   }
   ngOnInit() {
-  }
-  getLocal() {
-    this.ageValue = localStorage.getItem('Age');
-    this.timeVlaue = localStorage.getItem('screenTimeLimit');
-    this.contentValue = localStorage.getItem('selectedContentType');
-    this.langValue = localStorage.getItem('language');
   }
   setAgeTick(val: any) {
     let age = localStorage.getItem('Age');
@@ -73,7 +65,5 @@ export class SettingsComponent implements OnInit {
   }
   getLanguage(lang: any) {
     localStorage.setItem('language', lang);
-
   }
-
 }

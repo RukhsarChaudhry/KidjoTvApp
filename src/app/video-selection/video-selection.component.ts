@@ -5,9 +5,6 @@ import { VideoService } from './../shared/services/videoService/index';
 import { FavoriteService } from './../shared/services/favoritesService/index';
 import { AddFav } from './../shared/entities/index';
 import { NgxCarousel } from 'ngx-carousel';
-// declare var shaka: any;
-// import shaka from 'shaka-player/dist/shaka-player.compiled.js';
-// import * as shaka from "shaka-player/dist/shaka-player.compiled.js";
 import * as shaka from "shaka-player";
 
 
@@ -18,89 +15,86 @@ import * as shaka from "shaka-player";
 })
 export class VideoSelectionComponent implements OnInit {
   kidID: string;
-  obj = new Object();
   idss: any;
   video = new Object();
   cards: any[] = [];
-  url: any[] = [];
   bucketName: any;
   innerheigth: any;
   formate: any[] = [];
-  size: any;
-  color: any;
-  public carouselOne: NgxCarousel;
-  manifestUri: any = "https://d23sw6prl9jc74.cloudfront.net/1/7BVo6A4Xr1/7BVo6A4Xr1.m3u8";
+  public carouselTile: NgxCarousel;
+  uri: any[] = [];
+  public carouselTileItems: Array<any>;
+  manifestUri: any = "https://d23sw6prl9jc74.cloudfront.net/8/NavdQMkX7J.mp4";
   constructor(private route: ActivatedRoute,
     private videoService: VideoService,
     public favService: FavoriteService,
     private spinnerService: Ng4LoadingSpinnerService) {
-    console.log(shaka);
     var ids = this.route.params.subscribe(params => {
       this.idss = +params['id'];
     });
     this.getSubCard();
+    this.uri.push([this.manifestUri]);
+    this.uri.push([this.manifestUri]);
+    this.uri.push([this.manifestUri]);
+    this.uri.push([this.manifestUri]);
+    this.uri.push([this.manifestUri]);
+
   }
 
   ngOnInit() {
-    this.carouselOne = {
-      grid: { xs: 2, sm: 2, md: 2, lg: 3, all: 0 },
+    this.carouselTileItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    this.carouselTile = {
+      grid: { xs: 4, sm: 4, md: 5, lg: 5, all: 0 },
       slide: 2,
       speed: 400,
+      loop: true,
       animation: 'lazy',
       point: {
         visible: true
       },
       load: 2,
       touch: true,
-      loop: true,
       easing: 'ease'
     }
-    this.initApp();
+    this.uri.push(this.manifestUri);
+    this.uri.push(this.manifestUri);
+    this.uri.push(this.manifestUri);
+    this.uri.push(this.manifestUri);
+    this.uri.push(this.manifestUri);
+    this.uri.push(this.manifestUri);
+    this.uri.push(this.manifestUri);
+    this.uri.push(this.manifestUri);
+    this.uri.push(this.manifestUri);
+
+    // this.initApp();
   }
+  // initApp() {
+  //   shaka.polyfill.installAll();
+  //   if (shaka.Player.isBrowserSupported()) {
+  //     this.initPlayer();
+  //   } else {
+  //     console.log('Browser not supported!');
+  //   }
+  // }
+
+  // initPlayer() {
+  //   const video = document.getElementById('video');
+  //   var player = new shaka.Player(video);
+  //   player.addEventListener('error', this.onErrorEvent);
+  //   // for (var i = 0; i <= this.uri.length; i++) {
+  //   player.load(this.manifestUri).then(function () {
+  //     console.log('The video has now been loaded!');
+  //   }).catch(error => { this.onError(error) });
+  // }
 
 
-  initApp() {
-    console.log("test");
-    shaka.polyfill.installAll();
-    shaka.polyfill.installAll();
-    console.log("test");
-    if (shaka.Player.isBrowserSupported()) {
-      console.log("good");
-      this.initPlayer();
-    } else {
-      console.log('Browser not supported!');
-    }
-  }
+  // onErrorEvent(event) {
+  //   this.onError(event.detail);
+  // }
 
-  initPlayer() {
-    console.log("good");
-    const video = document.getElementById('video');
-    var player = new shaka.Player(video);
-    player.addEventListener('error', this.onErrorEvent);
-    player.load(this.manifestUri).then(function () {
-      console.log('The video has now been loaded!');
-    }).catch(error => { this.onError(error) });
-  }
-
-  onErrorEvent(event) {
-    this.onError(event.detail);
-  }
-
-  onError(error) {
-    console.error('Error code', error.code, 'object', error);
-  }
-
-
-
-
-
-
-
-
-
-
-
-
+  // onError(error) {
+  //   console.error('Error code', error.code, 'object', error);
+  // }
   getSubCard() {
     this.spinnerService.show();
     this.videoService.GetSubCard(this.idss).subscribe(data => {
@@ -109,7 +103,7 @@ export class VideoSelectionComponent implements OnInit {
       this.cards = data.subcards;
       var subCard = [];
       var temp = [];
-      var url = "https://www.youtube.com/embed/qY4S5lJx_ss?rel=0&amp;showinfo=0";
+      var url = "http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8";
       for (var index = 0; index < this.cards.length; index++) {
         subCard = [{ 'id': this.cards[index].id, 'videourl': this.videoURL(this.cards[index].formats, this.cards[index].id), 'Title': this.cards[index].title }];
 
@@ -161,14 +155,11 @@ export class VideoSelectionComponent implements OnInit {
     favourite.kidId = localStorage.getItem('kidId');
     this.spinnerService.show();
     this.favService.addFavrouit(favourite).subscribe(data => {
-      // this.toastr.success('Added to favourite!', 'Success!');
       console.log(data);
-      console.log("success");
       this.spinnerService.hide();
     },
       Error => {
         this.spinnerService.hide();
-        // this.toastr.error('Somethis is went wrong', 'Oops!');
       });
   }
 }

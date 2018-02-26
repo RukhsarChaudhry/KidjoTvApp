@@ -5,17 +5,18 @@
   </div>
 
   <div class="main-card-container">
-    <ngx-carousel [inputs]="carouselOne">
-      <ngx-item NgxCarouselItem *ngFor="let folder of folders">
+    <ngx-carousel [inputs]="carouselTile">
+      <ngx-tile NgxCarouselItem *ngFor="let folder of folders">
         <div (click)="goToVideoPage(folder[0].id)">
           <img class="activeImg" [style.background]="folder[0].color " src={{folder[0].imgUrl}}/>
         </div>
-      </ngx-item>
+      </ngx-tile>
+
       <button NgxCarouselPrev class='leftRs'>&lt;</button>
       <button NgxCarouselNext class='rightRs'>&gt;</button>
+
     </ngx-carousel>
   </div>
-
 
   <a [routerLink]="[ '/settings'] ">
     <div class="playlist-setting-footer ">

@@ -43,11 +43,15 @@
 .main-books-container{
     display: flex;
     width: 100%;
+    max-width: 90%;
     position: absolute;
     top: 30%;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    /* margin: 0 auto; */
+    left: 50%;
+    transform: translate(-50%);
 }
 .books{
     position: absolute;

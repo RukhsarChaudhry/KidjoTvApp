@@ -4,7 +4,7 @@ import { Input } from '@angular/core';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { RefreshWebService } from './../shared/services/RefreshWeb/index';
 import { Card } from './../shared/entities/index';
-import { NgxCarousel, NgxCarouselStore } from 'ngx-carousel';
+import { NgxCarousel } from 'ngx-carousel';
 
 
 @Component({
@@ -21,10 +21,10 @@ export class HomeComponent implements OnInit {
   ImageUrl: string;
   ids: any[] = [];
   cards: any[] = [];
-  folders = new Object();
+  folders: any[] = [];
   bucketName: any;
   videoUrl: string;
-  public carouselOne: NgxCarousel;
+  public carouselTile: NgxCarousel;
   constructor(public refreshweb: RefreshWebService,
     public router: Router,
     private spinnerService: Ng4LoadingSpinnerService) {
@@ -33,11 +33,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.GetCard();
-
-    this.carouselOne = {
-      grid: { xs: 8, sm: 2, md: 4, lg: 8, all: 0 },
+    this.carouselTile = {
+      grid: { xs: 2, sm: 4, md: 5, lg: 8, all: 0 },
       slide: 2,
       speed: 400,
+      loop: true,
       animation: 'lazy',
       point: {
         visible: true
@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
       touch: true,
       easing: 'ease'
     }
+
   }
   refreshWeb() {
     this.deviceId = localStorage.getItem('X-Kidjo-DeviceId');
@@ -75,7 +76,6 @@ export class HomeComponent implements OnInit {
     this.refreshweb.GetCard(this.obj).subscribe(data => {
       this.spinnerService.hide();
       this.cards = data.cards;
-      console.log(this.cards);
       var tempData = [];
       var test = [];
       var color: any[] = ['red', 'yellow', 'blue', 'green', 'orange', 'purple'];
@@ -92,7 +92,6 @@ export class HomeComponent implements OnInit {
         }
       }
       this.folders = tempData;
-
     },
       Error => {
         this.spinnerService.hide();
