@@ -40,7 +40,12 @@ export class HomeComponent implements OnInit {
       loop: true,
       animation: 'lazy',
       point: {
-        visible: true
+        visible: true,
+        pointStyles:`
+        .ngxcarouselPoint {
+          display: none;
+      }
+        `
       },
       load: 2,
       touch: true,

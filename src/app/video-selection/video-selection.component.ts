@@ -5,7 +5,7 @@ import { VideoService } from './../shared/services/videoService/index';
 import { FavoriteService } from './../shared/services/favoritesService/index';
 import { AddFav } from './../shared/entities/index';
 import { NgxCarousel } from 'ngx-carousel';
-import * as shaka from "shaka-player";
+import * as shaka from 'shaka-player';
 
 
 @Component({
@@ -42,15 +42,26 @@ export class VideoSelectionComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.carouselTileItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
     this.carouselTile = {
-      grid: { xs: 4, sm: 4, md: 5, lg: 5, all: 0 },
+      grid: { xs: 2, sm: 3, md: 5, lg: 5, all: 0 },
       slide: 2,
       speed: 400,
       loop: true,
       animation: 'lazy',
       point: {
-        visible: true
+        visible: true,
+        pointStyles: `
+        .tile {
+          position: relative;
+      }
+      .ngxcarousel-inner {
+        height: 260px;
+    }
+      .ngxcarouselPoint {
+        display: none;
+    }
+
+        `
       },
       load: 2,
       touch: true,
@@ -65,36 +76,37 @@ export class VideoSelectionComponent implements OnInit {
     this.uri.push(this.manifestUri);
     this.uri.push(this.manifestUri);
     this.uri.push(this.manifestUri);
-
-    // this.initApp();
+    this.initApp();
   }
-  // initApp() {
-  //   shaka.polyfill.installAll();
-  //   if (shaka.Player.isBrowserSupported()) {
-  //     this.initPlayer();
-  //   } else {
-  //     console.log('Browser not supported!');
-  //   }
-  // }
-
-  // initPlayer() {
-  //   const video = document.getElementById('video');
-  //   var player = new shaka.Player(video);
-  //   player.addEventListener('error', this.onErrorEvent);
-  //   // for (var i = 0; i <= this.uri.length; i++) {
-  //   player.load(this.manifestUri).then(function () {
-  //     console.log('The video has now been loaded!');
-  //   }).catch(error => { this.onError(error) });
-  // }
 
 
-  // onErrorEvent(event) {
-  //   this.onError(event.detail);
-  // }
+  initApp() {
+    shaka.polyfill.installAll();
+    if (shaka.Player.isBrowserSupported()) {
+      this.initPlayer();
+    } else {
+      console.error('Browser not supported!');
+    }
+  }
 
-  // onError(error) {
-  //   console.error('Error code', error.code, 'object', error);
-  // }
+  initPlayer() {
+    var video = document.getElementById('video');
+    var player = new shaka.Player(video);
+    player.addEventListener('error', this.onErrorEvent);
+    player.load(this.manifestUri).then(function () {
+      console.log('The video has now been loaded!');
+    }).catch(this.onError);
+  }
+
+  onErrorEvent(event) {
+    this.onError(event.detail);
+  }
+
+  onError(error) {
+    console.error('Error code', error.code, 'object', error);
+  }
+
+
   getSubCard() {
     this.spinnerService.show();
     this.videoService.GetSubCard(this.idss).subscribe(data => {

@@ -37,6 +37,7 @@
     "ngx-carousel": "^1.3.5",
     "ngx-drag-scroll": "^1.7.3",
     "primeng": "^5.2.0",
+    "react-player": "^1.2.1",
     "rxjs": "^5.5.6",
     "sha.js": "^2.4.10",
     "shaka-player": "^2.3.2",

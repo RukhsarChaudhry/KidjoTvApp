@@ -108,15 +108,17 @@
     width: 100%;
 }
 .lock-overlay .lock-icon{
-    top: 3%;
-    left: 30%;
+    top: 5%;
+    left: 25%;
+    width: 15px;
 }
 .lock-overlay p{
     position: absolute;
     top: 5%;
-    right: 27%;
+    right: 25%;
     color: #fff;
-    font-family: bree
+    font-family: bree;
+    font-size: 14px;
 }
 .books-card .caption{
     padding: 0em;
@@ -132,10 +134,12 @@
     text-align: left;
 }
 .fav-btn{    
-    /* position: absolute;
-    top: 110%;
-    left: 50%;  */
-    transform: translate(50%); 
+    position: absolute;
+    top: 113%;
+    width: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
 }
 .fav-btn img{
     width: 15px;
@@ -233,7 +237,7 @@
  .leftRs {
     position: absolute;
     margin: auto;
-    top: -45px;
+    top: -125px;
     bottom: 0;
     width: 50px;
     height: 50px;
@@ -245,7 +249,7 @@
 .rightRs {
     position: absolute;
     margin: auto;
-    top: -45px;
+    top: -125px;
     bottom: 0;
     width: 50px;
     height: 50px;

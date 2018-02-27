@@ -10,60 +10,29 @@
     <h3>Playlist</h3>
   </div>
   <div class="main-videocard-container">
-    <div class="video-card-container">
-      <div class="video-card">
-        <iframe width="300" height="215" src="https://www.youtube.com/embed/qY4S5lJx_ss?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
-          allowfullscreen></iframe>
+    <ngx-carousel [inputs]="carouselTile">
+      <ngx-tile NgxCarouselItem *ngFor="let url of uri">
+        <video style="width: 100%;" id="video" width="640" src={{url}} controls></video>
         <div class="lock-overlay">
           <img class="lock-bar" src="assets/svgs/video_card_lock_bar.svg">
           <img class="lock-icon" src="assets/svgs/video_card_lock.svg">
           <p>Press to unlock</p>
         </div>
         <div class="caption">
-          <p>Catty Jane Builds A Boat</p>
+          <p style="    color: white;
+          font-weight: 900;
+          background-color: red;margin-top: -2%;">Catty Jane Builds A Boat</p>
         </div>
         <div class="delete-btn" (click)="deleteFav(1)">
           <button type="button" value="btn" id="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path fill="#000" fill-rule="evenodd" d="M15.9078 12.3744l3.7228-3.7227c.3826-.3827.3848-1.0175-.0054-1.4077l-2.1204-2.1204c-.393-.393-1.0205-.3927-1.4077-.0055l-3.7227 3.723-3.7228-3.723c-.3826-.3825-1.0175-.3847-1.4077.0056L5.1234 7.244c-.393.393-.3926 1.0204-.0054 1.4077l3.7228 3.7227-3.7228 3.7228c-.3826.3827-.3848 1.0175.0054 1.4077l2.1204 2.1203c.393.393 1.0205.3927 1.4077.0054l3.7228-3.7227 3.7228 3.7227c.3827.3827 1.0176.3848 1.4078-.0054l2.1204-2.1204c.393-.393.3926-1.0206.0054-1.4078l-3.7228-3.7228zM0 12.493C-.004 5.5893 5.5894-.004 12.493 0 19.3964.004 24.996 5.6035 25 12.507c.004 6.9036-5.5894 12.497-12.493 12.493C5.6036 24.996.004 19.3965 0 12.493z"/></svg><p>delete</p>
-                        </button>
+                          </button>
         </div>
-      </div>
-    </div>
-    <div class="video-card-container">
-      <div class="video-card">
-        <iframe width="300" height="215" src="https://www.youtube.com/embed/nwZEcdBMLLU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
-          allowfullscreen></iframe>
-        <div class="lock-overlay">
-          <img class="lock-bar" src="assets/svgs/video_card_lock_bar.svg">
-          <img class="lock-icon" src="assets/svgs/video_card_lock.svg">
-          <p>Press to unlock</p>
-        </div>
-        <div class="caption">
-          <p>Beauty And The Beast</p>
-        </div>
-        <div class="delete-btn">
-          <button type="button" value="btn" id="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path fill="#000" fill-rule="evenodd" d="M15.9078 12.3744l3.7228-3.7227c.3826-.3827.3848-1.0175-.0054-1.4077l-2.1204-2.1204c-.393-.393-1.0205-.3927-1.4077-.0055l-3.7227 3.723-3.7228-3.723c-.3826-.3825-1.0175-.3847-1.4077.0056L5.1234 7.244c-.393.393-.3926 1.0204-.0054 1.4077l3.7228 3.7227-3.7228 3.7228c-.3826.3827-.3848 1.0175.0054 1.4077l2.1204 2.1203c.393.393 1.0205.3927 1.4077.0054l3.7228-3.7227 3.7228 3.7227c.3827.3827 1.0176.3848 1.4078-.0054l2.1204-2.1204c.393-.393.3926-1.0206.0054-1.4078l-3.7228-3.7228zM0 12.493C-.004 5.5893 5.5894-.004 12.493 0 19.3964.004 24.996 5.6035 25 12.507c.004 6.9036-5.5894 12.497-12.493 12.493C5.6036 24.996.004 19.3965 0 12.493z"/></svg><p>delete</p>
-                        </button>
-        </div>
-      </div>
-    </div>
-    <div class="video-card-container">
-      <div class="video-card">
-        <iframe width="300" height="215" src="https://www.youtube.com/embed/aa3OQiJPQCQ?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
-          allowfullscreen></iframe>
-        <div class="lock-overlay">
-          <img class="lock-bar" src="assets/svgs/video_card_lock_bar.svg">
-          <img class="lock-icon" src="assets/svgs/video_card_lock.svg">
-          <p>Press to unlock</p>
-        </div>
-        <div class="caption">
-          <p>Bert, Beth And The Turtle</p>
-        </div>
-        <div class="delete-btn">
-          <button type="button" value="btn" id="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path fill="#000" fill-rule="evenodd" d="M15.9078 12.3744l3.7228-3.7227c.3826-.3827.3848-1.0175-.0054-1.4077l-2.1204-2.1204c-.393-.393-1.0205-.3927-1.4077-.0055l-3.7227 3.723-3.7228-3.723c-.3826-.3825-1.0175-.3847-1.4077.0056L5.1234 7.244c-.393.393-.3926 1.0204-.0054 1.4077l3.7228 3.7227-3.7228 3.7228c-.3826.3827-.3848 1.0175.0054 1.4077l2.1204 2.1203c.393.393 1.0205.3927 1.4077.0054l3.7228-3.7227 3.7228 3.7227c.3827.3827 1.0176.3848 1.4078-.0054l2.1204-2.1204c.393-.393.3926-1.0206.0054-1.4078l-3.7228-3.7228zM0 12.493C-.004 5.5893 5.5894-.004 12.493 0 19.3964.004 24.996 5.6035 25 12.507c.004 6.9036-5.5894 12.497-12.493 12.493C5.6036 24.996.004 19.3965 0 12.493z"/></svg><p>delete</p>
-                        </button>
-        </div>
-      </div>
-    </div>
+      </ngx-tile>
+
+      <button NgxCarouselPrev class='leftRs'>&lt;</button>
+      <button NgxCarouselNext class='rightRs'>&gt;</button>
+
+    </ngx-carousel>
   </div>
   <a [routerLink]="[ '/'] ">
     <div class="footer-heading">
