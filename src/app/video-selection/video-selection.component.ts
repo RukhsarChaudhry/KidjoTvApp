@@ -5,7 +5,6 @@ import { VideoService } from './../shared/services/videoService/index';
 import { FavoriteService } from './../shared/services/favoritesService/index';
 import { AddFav } from './../shared/entities/index';
 import { NgxCarousel } from 'ngx-carousel';
-import * as shaka from 'shaka-player';
 
 
 @Component({
@@ -23,8 +22,8 @@ export class VideoSelectionComponent implements OnInit {
   formate: any[] = [];
   public carouselTile: NgxCarousel;
   uri: any[] = [];
-  public carouselTileItems: Array<any>;
   manifestUri: any = "https://d23sw6prl9jc74.cloudfront.net/8/NavdQMkX7J.mp4";
+  currentStream = "https://d23sw6prl9jc74.cloudfront.net/6/NavdQMkX7J.mp4";
   constructor(private route: ActivatedRoute,
     private videoService: VideoService,
     public favService: FavoriteService,
@@ -76,37 +75,7 @@ export class VideoSelectionComponent implements OnInit {
     this.uri.push(this.manifestUri);
     this.uri.push(this.manifestUri);
     this.uri.push(this.manifestUri);
-    this.initApp();
   }
-
-
-  initApp() {
-    shaka.polyfill.installAll();
-    if (shaka.Player.isBrowserSupported()) {
-      this.initPlayer();
-    } else {
-      console.error('Browser not supported!');
-    }
-  }
-
-  initPlayer() {
-    var video = document.getElementById('video');
-    var player = new shaka.Player(video);
-    player.addEventListener('error', this.onErrorEvent);
-    player.load(this.manifestUri).then(function () {
-      console.log('The video has now been loaded!');
-    }).catch(this.onError);
-  }
-
-  onErrorEvent(event) {
-    this.onError(event.detail);
-  }
-
-  onError(error) {
-    console.error('Error code', error.code, 'object', error);
-  }
-
-
   getSubCard() {
     this.spinnerService.show();
     this.videoService.GetSubCard(this.idss).subscribe(data => {
@@ -122,7 +91,7 @@ export class VideoSelectionComponent implements OnInit {
         temp.push(subCard);
       }
       this.video = temp;
-      // console.log(this.video);
+      console.log(this.video);
     },
       Error => {
         this.spinnerService.hide();
@@ -130,17 +99,26 @@ export class VideoSelectionComponent implements OnInit {
   }
   videoURL(FormateId: any[], id: any) {
     var url = localStorage.getItem('videoUrl');
-    // console.log(FormateId, id);
-    // this.size = this.formate[index].id;
     var formate = [1, 2, 3, 4, 5, 6, 7, 8];
     this.innerheigth = window.innerHeight;
-    if (this.innerheigth <= 720 && this.innerheigth >= 480) {
-      if (FormateId[0].id == formate || FormateId[0].id == formate || FormateId[0].id == formate) {
+    if (this.innerheigth >= 720) {
+      if (FormateId[0].id == 1) {
         var ID = FormateId[0].id;
         console.log(ID);
+        this.bucketName = '.m3u8';
+        return url + ID + '/' + id + '/' + id + this.bucketName;
+      } else if (FormateId[0].id == 2) {
+        var ID = FormateId[0].id;
+        console.log(ID);
+        this.bucketName = '.mpd';
+        return url + ID + '/' + id + '/' + id + this.bucketName;
+      } else if (FormateId[0].id == 3) {
+        var ID = FormateId[0].id;
+        console.log(ID);
+        this.bucketName = '.mp4';
+        return url + ID + '/' + id + this.bucketName;
       }
-      this.bucketName = '.mp4';
-      return url + '/' + ID + '/' + id + '/' + id + this.bucketName;
+
     } else if (this.innerheigth <= 480 && this.innerheigth >= 360) {
       if (FormateId[0].id == 4 || FormateId[0].id == 5 || FormateId[0].id == 6) {
         var ID = FormateId[0].id;

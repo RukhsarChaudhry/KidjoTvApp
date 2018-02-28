@@ -4,7 +4,11 @@ import { Route, RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { NgxCarouselModule } from 'ngx-carousel';
-// import 'hammerjs';
+import { VgCoreModule } from 'videogular2/core';
+import { VgControlsModule } from 'videogular2/controls';
+import { VgOverlayPlayModule } from 'videogular2/overlay-play';
+import { VgBufferingModule } from 'videogular2/buffering';
+import { VgStreamingModule } from 'videogular2/streaming';
 
 
 
@@ -39,7 +43,12 @@ import { FolderComponent } from './folder/folder.component';
     SharedModule.forRoot(),
     RouterModule.forRoot(routes),
     Ng4LoadingSpinnerModule.forRoot(),
-    NgxCarouselModule
+    NgxCarouselModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
+    VgStreamingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,7 +12,7 @@
       <h3>Favourite</h3>
     </div>
   </a>
-  <div class="main-books-container">
+  <!-- <div class="main-books-container">
     <ngx-carousel [inputs]="carouselTile">
       <ngx-tile NgxCarouselItem *ngFor="let url of uri">
         <video style="width: 100%;" id="video" width="640" src={{url}} controls></video>
@@ -35,7 +35,40 @@
       <button NgxCarouselNext class='rightRs'>&gt;</button>
 
     </ngx-carousel>
-  </div>
+  </div> -->
 
   <!-- <video id="video" width="640" poster="//shaka-player-demo.appspot.com/assets/poster.jpg" controls autoplay></video> -->
+
+
+
+
+  <div class="main-books-container" *ngFor="let url of uri">
+    <vg-player>
+      <vg-overlay-play></vg-overlay-play>
+      <vg-buffering></vg-buffering>
+      <vg-scrub-bar>
+        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+      </vg-scrub-bar>
+      <vg-controls>
+        <vg-play-pause></vg-play-pause>
+        <vg-playback-button></vg-playback-button>
+
+        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+        <vg-track-selector></vg-track-selector>
+        <vg-mute></vg-mute>
+        <vg-volume></vg-volume>
+
+        <vg-fullscreen></vg-fullscreen>
+      </vg-controls>
+      <video #media [vgMedia]="media" [vgDash]="currentStream" [vgHls]="currentStream" id="singleVideo">
+        <source src={{url}}>
+      </video>
+    </vg-player>
+  </div>
 </section>
